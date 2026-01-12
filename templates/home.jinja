@@ -1,0 +1,82 @@
+{% from "macros.jinja" import render_table %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Качество воды</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        .table-wrapper {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 4px 8px;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Качество воды</h1>
+
+<nav>
+    <a href="#countries">Страны</a> |
+    <a href="#regions">Регионы</a> |
+    <a href="#cities">Города</a> |
+    <a href="#data">Данные</a> |
+    <a href="#avg">Средние</a> |
+    <a href="#min">Минимум</a> |
+    <a href="#max">Максимум</a>
+</nav>
+
+<h2 id="countries">Страны</h2>
+<div class="table-wrapper">
+    {{ render_table(country_headers, country_rows) }}
+</div>
+
+<h2 id="regions">Регионы</h2>
+<div class="table-wrapper">
+    {{ render_table(region_headers, region_rows) }}
+</div>
+
+<h2 id="cities">Города</h2>
+<div class="table-wrapper">
+    {{ render_table(city_headers, city_rows) }}
+</div>
+
+<h2 id="data">Показатели качества воздуха и загрязнения воды</h2>
+<div class="table-wrapper">
+    {{ render_table(data_headers, data_rows) }}
+</div>
+
+<h2 id="avg">Средние показатели</h2>
+<div class="table-wrapper">
+    {{ render_table(avg_headers, avg_rows) }}
+</div>
+
+<h2 id="min">Минимум по странам</h2>
+<div class="table-wrapper">
+    {{ render_table(min_headers, min_rows) }}
+</div>
+
+<h2 id="max">Максимум по странам</h2>
+<div class="table-wrapper">
+    {{ render_table(max_headers, max_rows) }}
+</div>
+
+</body>
+</html>

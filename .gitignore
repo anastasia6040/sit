@@ -1,0 +1,57 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# IDE / editor directories
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing / coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+
+# Environment variable files
+.env
+.env.*
+
+# Pytest / temp
+.tox/
+.pytest_cache/
+
+# Django static collected files (optional)
+# collectstatic output folder (if used)
+static/
+static_root/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
