@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить город</title>
+</head>
+<body>
+
+<h1>Добавить город</h1>
+
+<form method="post">
+    {{ csrf_input }}
+    {{ form.as_p() }}
+    <button type="submit">Сохранить</button>
+</form>
+
+</body>
+</html>

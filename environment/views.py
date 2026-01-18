@@ -1,7 +1,9 @@
 from django.template.response import TemplateResponse
 from django.db.models import Avg, Min, Max
+from django.shortcuts import redirect
 
 from .models import Country, Region, City, EnvironmentalData
+from .forms import CityForm
 
 
 def home(request):
@@ -113,5 +115,22 @@ def home(request):
         request,
         'home.jinja',
         context,
+        using='jinja2'
+    )
+
+
+def add_city(request):
+    if request.method == 'POST':
+        form = CityForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = CityForm()
+
+    return TemplateResponse(
+        request,
+        'add_city.jinja',
+        {'form': form},
         using='jinja2'
     )
